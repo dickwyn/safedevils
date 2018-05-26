@@ -4,7 +4,7 @@
   "description": "A bootstrap project to quickly get you started with the SafeTrek API using NodeJS.",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development gulp watch",
+    "start": "cross-env NODE_ENV=development gulp watch",
     "postinstall": "gulp"
   },
   "repository": {
@@ -28,7 +28,7 @@
     "eslint": "^4.19.0",
     "exorcist": "^1.0.1",
     "express": "^4.16.3",
-    "gulp": "^3.9.1",
+    "gulp": "^3.9.0",
     "gulp-if": "^2.0.2",
     "gulp-nodemon": "^2.2.1",
     "gulp-plumber": "^1.2.0",
@@ -43,5 +43,8 @@
     "unirest": "^0.5.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "cross-env": "^5.1.6"
   }
 }
