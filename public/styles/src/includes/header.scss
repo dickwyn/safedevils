@@ -14,32 +14,23 @@ header .container {
 
 header {
     overflow: hidden;
-    background-color: orange;
+    background-color: $primary;
     min-width: 100%;
 }
 
 header a {
     float: left;
-    color: black;
+    color: $lightprimary;
     text-align: center;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
-}
-
-header a.logo {
     font-size: 25px;
     font-weight: bold;
 }
 
 header a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-header a.active {
-    background-color: dodgerblue;
-    color: white;
+    color: $icon;
 }
