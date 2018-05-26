@@ -1,65 +1,7 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import 'variables';
 @import 'materialize-css/sass/materialize';
 @import 'colors';
-@import 'generic';
 @import 'animations';
-
-body {
-  background-color: #F5F6FA;
-  @media only screen and (max-width: 640px) {
-    background-color: $white;
-  }
-}
-
-main.container {
-  padding: 0 2.5%;
-}
-
-.container {
-  background-color: #FFF;
-  box-shadow: 0px 0px 13px -8px $shadow;
-  @media only screen and (max-width: 640px) {
-    box-shadow: none;
-  }
-}
-
-nav, .btn {
-  background-color: $st-blue;
-}
-
-.btn:hover {
-  background-color: $st-blue-accent;
-}
-
-.brand-logo > img {
-  height: 30px;
-  margin: 18px 0 0 15px;
-}
-
-.alarm {
-  position: relative;
-  margin: 30px auto;
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  background-color: $st-blue;
-}
-
-.alarm-red {
-  background-color: $st-red;
-  box-shadow: 0 0 0 $st-red-accent;
-  animation: pulse 1.2s infinite;
-}
-
-footer {
-  padding: 10px;
-}
-
-code {
-  white-space: pre-wrap;
-}
-
-.access_token {
-  cursor: pointer;
-}
+@import 'header';
+@import 'content';
+@import 'footer';
