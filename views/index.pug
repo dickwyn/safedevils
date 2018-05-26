@@ -1,0 +1,157 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title #{company_name} Node Bootstrap Demo
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='shortcut icon' href='https://s3.us-east-2.amazonaws.com/safetrek-assets/safetrek-favicon.ico' type='image/x-icon')
+    link(rel='stylesheet' type='text/css' media='screen' href='/styles/main.css')
+
+- var navItem1 = 'GitHub';
+- var navItem2 = 'Documentation';
+  
+  body
+    .navbar-fixed
+      nav
+        .nav-wrapper
+          .container
+            a.brand-logo(href='#!')
+              img(src='https://s3.us-east-2.amazonaws.com/safetrek-assets/safetrek-logo-horizontal-white.svg' alt=company_name)
+            a.button-collapse(href='#' data-activates='mobile-nav')
+              i.material-icons menu
+            ul.right.hide-on-med-and-down
+              li: a(target='_blank' href='https://github.com/SafeTrek/safetrek-node-bootstrap') #{navItem1}
+              li: a(target='_blank' href='https://docs.safetrek.io') #{navItem2}
+    ul#mobile-nav.side-nav
+      li: a(target='_blank' href='https://github.com/SafeTrek/safetrek-node-bootstrap') #{navItem1}
+      li: a(target='_blank' href='https://docs.safetrek.io') #{navItem2}
+    main.container
+      .row
+        .col.s12.mt-50
+          h5 Get Started With Emergency Response
+          p 
+            | Use this demo to learn how the authorization flow used by SafeTrek’s Emergency Response API works.
+            | Bootstrap your projects with this app and quickly set them up to consume the SafeTrek API.
+          .section.mt-30
+            h5.flow-text Request Authentication
+            .divider
+            p
+              | Go through the #{company_name} OAuth flow to get your 
+              code authorization_code
+              | , 
+              code access_token
+              |  and a 
+              code refresh_token
+              | .  👉 This is the same flow your users will experience when creating a #{company_name} account from within your app or device.
+            a.safetrek-btn(
+                href='#'
+                data-href=auth_url
+                data-redirect=redirect_uri
+                data-protocol=protocol
+                data-localhost=localhost
+                data-port=port
+                data-callback=callback
+              )
+              img.responsive-img.mt-30(
+                src='https://s3.us-east-2.amazonaws.com/safetrek-assets/safetrek-btn-connect.svg'
+                data-disc-src='https://s3.us-east-2.amazonaws.com/safetrek-assets/safetrek-btn-disconnect.svg'
+                alt=company_name + ' connection button')
+      .row
+        .col.s12
+          .section
+            h5.flow-text Get Your Tokens
+            .divider
+            p
+              | Now that you have the access and refresh tokens, you can use the  
+              code refresh_token
+              |  to get a new 
+              code access_token
+              | . Access tokens are used frequently in the headers for making secure requests and are prone to theft and misuse, so limiting their validity makes them secure.
+              | Refresh tokens don't expire, so be sure to keep yours safe!
+              | Errors and state changes are logged to the console.
+            div
+              code authorization_code
+              input#authorization_code.display-only(type='text')
+              code refresh_token
+              input#refresh_token.display-only(type='text')
+              code access_token
+              input#access_token.display-only(type='text')
+              button.btn.waves-effect.waves-light.copy-token.mr-30.mb-10(type='button') Copy Token
+              button.btn.waves-effect.waves-light.new-token.tooltipped(
+                type='button'
+                data-position='bottom'
+                data-tooltip='Exchange your refresh_token for a new access_token'
+              ) Refresh Token
+      .row
+        .col.s12
+          .section
+            h5.flow-text Create Your Alarm!
+            .divider
+            p
+              | Use the 
+              code access_token
+              |  to create an alarm for your authorized user.
+              | You’ll use a sandbox server to make this example request.
+              | Locations used are random and based off of a static JSON data source.
+              | Errors and state changes are logged to the console.
+            .row
+              .col.s12.m6
+                .card
+                  .card-content
+                    .card-title Request
+                    br
+                    code
+                      | POST https://api-sandbox.safetrek.io/v1/alarms
+                      | Authorization: Bearer 
+                      span.access_token.blue-text.text-darken-3
+                      |
+                      | Content-Type: application/json
+
+
+                    code.alarm-request.
+                      {
+                        "services": {
+                          "police": true,
+                          "fire": false,
+                          "medical": false
+                        },
+                        "location.coordinates": {
+                          "lat": 34.32334,
+                          "lng": -117.3343,
+                          "accuracy": 5
+                        }
+                      }
+                  .card-action
+                    a.blue-text.text-darken-3.use-addr(href='#') Use Address
+                    a.blue-text.text-darken-3.use-coords.hide(href='#') Use Coordinates
+                    br.hide-on-med-and-up
+                    a.blue-text.text-darken-3.make-alarm-request(href='#') Make Request
+              .col.s12.m6
+                .card
+                  .card-content.center-align
+                    .card-title Alarm Status
+                    .alarm
+                    p.alarm-status
+      .row
+        .col.s12
+          .section
+            h5.flow-text Now What?
+            .divider
+            p.
+            | Check out the 
+            a(href='https://docs.safetrek.io/reference' target='_blank') developer documentation 
+            | to learn more about the #{company_name} API. 
+            | Integrate SafeTrek’s authentication flow in your own app so that your users can get help 🚓 🚒 🚑 when they need it most.
+          
+            p We would love to see what you come up with and the creative ways you use our API.
+            
+            p Have fun!
+
+      footer
+        .divider
+        p.center-align
+          | Built with ♥ at 
+          a(href='https://www.safetrekapp.com/' target='_blank') #{company_name}
+            
+    script(src='/scripts/main.js')
