@@ -1,0 +1,84 @@
+#connected {
+    display: none;
+}
+
+#connected .nested {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#connected .nested div {
+    justify-self: center;
+}
+
+#connected .alert-btn {
+    color: $alert;
+    background-color: transparent;
+    border: 3px dotted $alert;
+    text-align: center;
+    text-decoration: none;
+    margin: 1em 1em;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+#connected .safety-alert .fas.fa-exclamation {
+    color: $alert;
+}
+
+#connected .alert-btn:hover {
+    background: $alert;
+    color: $icon;
+}
+
+#connected .fa-exclamation-circle {
+    color: $alert;
+}
+
+#connected .injury-btn {
+    color: $accent;
+    background-color: transparent;
+    border: 3px dotted $accent;
+    text-align: center;
+    text-decoration: none;
+    margin: 1em 1em;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+#connected .injury-btn:hover {
+    background: $accent;
+    color: $icon;
+}
+
+#connected .warning {
+    grid-column: span 2;
+    margin: 1em 0em;
+}
+
+#connected .warning i {
+    font-weight: 300;
+    font-size: 0.8em;
+    margin: 1em 0em 0em;
+    color: $text;
+}
+
+#connected .disconnect-btn {
+    grid-column: span 2;
+}
+
+#connected .safetrek-btn {
+    border: 2px solid $darkprimary;
+    background-color: $darkprimary;
+    color: $icon;
+    padding: 7px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+#connected .safetrek-btn:hover {
+    background: $primary;
+    color: $icon;
+}

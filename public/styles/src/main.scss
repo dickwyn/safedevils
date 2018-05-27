@@ -1,7 +1,9 @@
 //@import 'materialize-css/sass/materialize';
 //@import 'animations';
 @import 'colors';
+@import 'common';
 @import 'header';
-@import 'connection';
+@import 'disconnected';
+@import 'connected';
 @import 'tips';
 @import 'footer';

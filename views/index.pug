@@ -44,30 +44,27 @@ html(lang='en')
       .container
         div
           h1 Safety Alert
-        div.alert-btn
-          button
-            i.fas.fa-exclamation
-          p Danger
-        div.injury-btn
-          button
-            i.fas.fa-briefcase-medical
-          p Injury
-        .warning
-          p
-            i.fas.fa-exclamation-circle
-            |  Buttons above will alert local emergency services.
-        .btn
-          button.safetrek-btn(
-            href='#'
-            data-href=auth_url
-            data-redirect=redirect_uri
-            data-protocol=protocol
-            data-localhost=localhost
-            data-port=port
-            data-callback=callback
-          )
-            b Disconnect 
-            | SafeTrek
+        .nested
+          div.safety-alert
+            button.alert-btn
+              i.fas.fa-exclamation
+          div.safety-alert
+            button.injury-btn
+              i.fas.fa-briefcase-medical
+          .warning
+            i.fas.fa-exclamation Buttons above will alert local emergency services.
+          .disconnect-btn
+            button.safetrek-btn(
+              href='#'
+              data-href=auth_url
+              data-redirect=redirect_uri
+              data-protocol=protocol
+              data-localhost=localhost
+              data-port=port
+              data-callback=callback
+            )
+              b Disconnect 
+              | SafeTrek
     section#info
       .container
         div

@@ -1,0 +1,38 @@
+#disconnected {
+    display: inline;
+}
+
+#disconnected  .nested {
+    display: grid;
+    padding: 0em 1em;
+}
+
+#disconnected  .container div {
+    max-width: 540px;
+}
+
+#disconnected h1 {
+    margin-bottom: 0em;
+}
+
+#disconnected p {
+    line-height: 2em;
+}
+
+#disconnected .safetrek-btn {
+    border: 2px solid $darkprimary;
+    background-color: transparent;
+    color: $darkprimary;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+#disconnected .safetrek-btn:hover {
+    background: $primary;
+    color: $icon;
+}
+
+#disconnected .btn {
+    justify-self: center;
+}
