@@ -8,7 +8,6 @@ This project is built with:
 
 1. SafeTrek
 2. [NodeJS](http://nodejs.org)
-3. [Angular](https://angular.io/) - `$ npm install @angular/cli -g`
 4. [GulpJS](https://gulpjs.com/) - `$ npm install gulp-cli -g`
 5. [PugJS](https://pugjs.org/api/getting-started.html) - `$ npm install pug`
 
@@ -31,14 +30,17 @@ This project is built with:
 
     .  
     ├── public              # All additional assets of the projects
-    │   ├── assets          # All stylesheets (.css and .scss)
-    │   ├── scripts          # All images used by the project
-    │   ├── styles          # All unprocessed .scss files
+    │   ├── assets          # All media assets
+    │   ├── scripts         # Compiled.js files    
+    │   └── └── src         # All unprocessed .js files
+    │   ├── styles          # Processed .css files
     │   └── └── src         # All unprocessed .scss files
     ├── .gitattributes
     ├── .gitignore          # Folders and files that are ignored by git
+    ├── Procfile            # Defininition for heroku deployment
     ├── README.md           # Readme file for repository
-    ├── gulpfile.js         # Automate compilation of pug, sass and jekyll
+    ├── app.json            # Folders and files that are ignored by git
+    ├── gulpfile.babel.js   # Automate compilation
     ├── index.js            # main entry point
     ├── package-lock.json
     └── package.json        # Document node dependencies
