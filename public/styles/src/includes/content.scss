@@ -2,7 +2,7 @@
 #alert .container,
 #info .container {
     display: grid;
-    justify-items: center !important;
+    justify-items: center;
     margin: 1em 1em 1em;
 }
 
@@ -11,23 +11,23 @@
 }
 
 #connect .btn-outline {
-    border: 2px solid #2196F3;
-    background-color: white;
-    color: dodgerblue;
+    border: 2px solid $darkprimary;
+    background-color: transparent;
+    color: $darkprimary;
     padding: 14px 28px;
     font-size: 16px;
     border-radius: 8px;
 }
 
 #connect .btn-outline:hover {
-    background: #2196F3;
-    color: white;
+    background: $primary;
+    color: $icon;
 }
 
 .alert-btn {
     background-color: transparent;
-    border: 2px solid #2196F3;
-    color: black;
+    border: 3px dotted $alert;
+    color: $alert;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -39,31 +39,30 @@
 }
 
 .alert-btn:hover {
-    background: red;
-    color: white;
+    background: $alert;
+    color: $icon;
 }
 
 .injury-btn {
-    background-color: blue;
+    background-color: $accent;
     border: none;
     color: white;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     height: 38px;
     width: 120px;
-    border-radius: 8px
+    border-radius: 8px;
 }
 
 .injury-btn:hover {
-    background: red;
-    color: white;
+    background: $lightaccent;
+    color: $icon;
 }
 
 .fa-exclamation-circle {
-    color: red;
+    color: $alert;
 }
 
 .warning p {
@@ -73,24 +72,34 @@
     color: black;
 }
 
-#info .container div {
+#info .nested {
+    display: grid;
     border: 2px dashed gray;
     border-radius: 8px;
     padding: 1em;
 }
 
-.btn-outline {
-    border: 2px solid gray;
-    background-color: white;
-    color: gray;
+#info h1 {
+    margin: 0em;
+}
+
+.action {
+    justify-self: end;
+}
+
+#info .btn-outline {
+    border: 1px solid $secondarytext;
+    background: transparent;
+    color: $secondarytext;
     padding: 0.3em 0.8em;
     font-size: 16px;
     border-radius: 8px;
+    text-transform: lowercase;
 }
 
-.btn-outline:hover {
-    background: #2196F3;
-    color: white;
+#info .btn-outline:hover {
+    background-color: $secondarytext;
+    color: $icon;
 }
 
 .fa-chevron-circle-right {
@@ -102,8 +111,4 @@ hr {
     max-width: 640px;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
-@media(min-width: 641px) {
-    
 }
