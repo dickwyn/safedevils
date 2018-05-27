@@ -67,7 +67,6 @@ $(function(){
       let btn = $('button.safetrek-btn > img')
       let discBtnImg = $('button.safetrek-btn > img').attr('data-disc-src')
       log('SafeTrek is connected! Current State:', state)
-      M.toast('SafeTrek is connected !', 2000)
       btn.attr('src', discBtnImg)
       $('input#authorization_code').val(state.get('authorization_code'))
       $('input#access_token').val(state.get('access_token'))
