@@ -6,6 +6,9 @@
     margin: 1em 1em 1em;
 }
 
+#info .container div {
+    max-width: 540px;
+}
 
 #connect .btn-outline {
     border: 2px solid #2196F3;
@@ -70,6 +73,12 @@
     color: black;
 }
 
+#info .container div {
+    border: 2px dashed gray;
+    border-radius: 8px;
+    padding: 1em;
+}
+
 .btn-outline {
     border: 2px solid gray;
     background-color: white;
@@ -93,4 +102,8 @@ hr {
     max-width: 640px;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+@media(min-width: 641px) {
+    
 }
