@@ -1,7 +1,7 @@
 {
-  "name": "safetrek-node-bootstrap",
+  "name": "testorange-safe",
   "version": "1.0.0",
-  "description": "A bootstrap project to quickly get you started with the SafeTrek API using NodeJS.",
+  "description": "A Node.js project using the SafeTrek API",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development gulp watch",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SafeTrek/safetrek-node-bootstrap.git"
+    "url": "git+https://github.com/dickwyn/testorange-safe.git"
   },
-  "author": "SafeTrek",
+  "author": "Dick Wyn Yong",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/SafeTrek/safetrek-node-bootstrap/issues"
+    "url": "https://www.dickwyn.xyz/"
   },
-  "homepage": "https://github.com/SafeTrek/safetrek-node-bootstrap#readme",
+  "homepage": "https://www.dickwyn.xyz/",
   "devDependencies": {
     "ajv": "^5.0.0",
     "babel-cli": "^6.26.0",
