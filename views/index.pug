@@ -67,17 +67,11 @@ html(lang='en')
     section#info
       .container
         div
-          .nested
+          .nested(onload="loadInfo()")
             div
               h1 Safety Tip
-            div.tip
-              p
-                b LiveSafe App - 
-                | Advisory messages are not life-threatening and may include campus incidents such as a power outage or a water leak. Using active geofence location, advisories target specific areas where an incident is occurring. To receive these advisories, please be sure to enable location-services on your smartphone. ASU Alerts, life-threatening situations such as a major fire or an armed suspect on campus, are sent via these methods
-            div.moreinfo
-              button
-                | Learn more 
-                i.fas.fa-chevron-circle-right
+            div#tip
+            div#moreinfo
     footer
       .container
         div

@@ -132,11 +132,11 @@ section .container {
     line-height: 1.5em;
 }
 
-#info .moreinfo {
+#info #moreinfo {
     justify-self: end;
 }
 
-#info .moreinfo button {
+#info #moreinfo button {
     border: 1px solid $secondarytext;
     background: transparent;
     color: $secondarytext;
@@ -146,7 +146,7 @@ section .container {
     text-transform: lowercase;
 }
 
-#info .moreinfo button:hover {
+#info #moreinfo button:hover {
     background-color: $secondarytext;
     color: $icon;
 }

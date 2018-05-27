@@ -131,7 +131,7 @@ $(function(){
       })
     })
 
-    $('a.make-alarm-request').on('click', function(e) {
+    $('button.use-coords.make-alarm-request').on('click', function(e) {
       e.preventDefault()
       if (state.get('status') === 'active-alarm') {
         log('Alarm is currently active and will reset in 10s or less.')
@@ -239,7 +239,26 @@ $(function(){
 })
 
 $(document).ready(function() {
-  $("#btnSubmit").click(function(){
-      alert("button");
+  $(function loadInfo(){
+      var tips = [
+        {
+          title: "LiveSafe App",
+          text: "Advisory messages are not life-threatening and may include campus incidents such as a power outage or a water leak. Using active geofence location, advisories target specific areas where an incident is occurring. To receive these advisories, please be sure to enable location-services on your smartphone. ASU Alerts, life-threatening situations such as a major fire or an armed suspect on campus, are sent via these methods",
+          img:  "test"
+        },
+        {
+          title: "Bike Security",
+          text: "Register your bike with the ASU Police. It is important to register your bike with us even if your bicycle is registered with another program or law enforcement agency. Always lock your bike to a bicycle rack. Secure the U-lock through the bike frame, the rear wheel and the bicycle rack. Click to watch this video.",
+          link:  "hello"
+        },
+        {
+          title: "Safety Escort",
+          text: "Request a one-time or routine pick-up by ASU Tempe Campus' Safety Escort Services. You will receive an email to confirm your reservation.",
+          link:  "https://www.asuusg.com/#!services/g0vkh"
+        }
+      ];
+      var tip = tips[Math.floor(Math.random() * tips.length)];
+      document.getElementById("tip").innerHTML = '<p><b>' + tip.title + '</b> - ' + tip.text + '<p>';
+      document.getElementById("moreinfo").innerHTML = '<button href="' + tip.link + '"> Learn More <i class="fas fa-chevron-circle-right"></button>';
   }); 
 });
