@@ -11,21 +11,36 @@ html(lang='en')
     link(href='https://fonts.googleapis.com/css?family=Roboto:100,400,500,700', rel='stylesheet')
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin='anonymous')
     link(rel='stylesheet' type='text/css' media='screen' href='/styles/main.css')
+    script(src='/scripts/main.js')
   body
     header
       .container
         div
-          a.logo(href='#') testorange
-    section#connect
+          a.logo(href='#') testorange safe
+    section#disconnected
       .container
         div
-          h1 Connect to begin
-        div
-          button.btn-outline
-            b Connect 
-            | SafeTrek
+          .nested
+            div
+              h1 Request Access
+              P 
+                | In order to use this application, you will need to create an account through SafeTrek.
+              p
+                | SafeTrek is a security API that this application uses and when creating, you will use your phone number to authenticate your identity. An SMS code will be sent for verification. 
+            .btn
+              button.safetrek-btn(
+                href='#'
+                data-href=auth_url
+                data-redirect=redirect_uri
+                data-protocol=protocol
+                data-localhost=localhost
+                data-port=port
+                data-callback=callback
+              )
+                b Connect 
+                | SafeTrek
       hr
-    section#alert
+    section#connected
       .container
         div
           h1 Safety Alert
@@ -37,22 +52,32 @@ html(lang='en')
           p
             i.fas.fa-exclamation-circle
             |  Buttons above will alert local emergency services.
-    hr
+        .btn
+          button.safetrek-btn(
+            href='#'
+            data-href=auth_url
+            data-redirect=redirect_uri
+            data-protocol=protocol
+            data-localhost=localhost
+            data-port=port
+            data-callback=callback
+          )
+            b Disconnect 
+            | SafeTrek
     section#info
       .container
         div
           .nested
             div
-              h1 Safety Tips
-            div
+              h1 Safety Tip
+            div.tip
               p
                 b LiveSafe App - 
                 | Advisory messages are not life-threatening and may include campus incidents such as a power outage or a water leak. Using active geofence location, advisories target specific areas where an incident is occurring. To receive these advisories, please be sure to enable location-services on your smartphone. ASU Alerts, life-threatening situations such as a major fire or an armed suspect on campus, are sent via these methods
-            div.action
-              button.btn-outline
+            div.moreinfo
+              button
                 | Learn more 
                 i.fas.fa-chevron-circle-right
-    hr
     footer
       .container
         div

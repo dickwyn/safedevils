@@ -1,16 +1,31 @@
-#connect .container,
-#alert .container,
-#info .container {
+section .container {
     display: grid;
     justify-items: center;
     margin: 1em 1em 1em;
 }
 
-#info .container div {
+#disconnected {
+    display: inline;
+}
+
+#disconnected  .nested {
+    display: grid;
+    padding: 0em 1em;
+}
+
+#disconnected  .container div {
     max-width: 540px;
 }
 
-#connect .btn-outline {
+#disconnected h1 {
+    margin-bottom: 0em;
+}
+
+#disconnected p {
+    line-height: 2em;
+}
+
+#disconnected .safetrek-btn {
     border: 2px solid $darkprimary;
     background-color: transparent;
     color: $darkprimary;
@@ -19,12 +34,38 @@
     border-radius: 8px;
 }
 
-#connect .btn-outline:hover {
+#disconnected .safetrek-btn:hover {
     background: $primary;
     color: $icon;
 }
 
-.alert-btn {
+#disconnected .btn {
+    justify-self: center;
+}
+
+#connected .safetrek-btn {
+    border: 2px solid $darkprimary;
+    background-color: $darkprimary;
+    color: $icon;
+    padding: 7px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+#connected {
+    display: none;
+}
+
+#connected .safetrek-btn:hover {
+    background: $primary;
+    color: $icon;
+}
+
+#connected .btn {
+    margin-top: 1em;
+}
+
+#connected .alert-btn {
     background-color: transparent;
     border: 3px dotted $alert;
     color: $alert;
@@ -38,12 +79,12 @@
     border-radius: 50%;
 }
 
-.alert-btn:hover {
+#connected .alert-btn:hover {
     background: $alert;
     color: $icon;
 }
 
-.injury-btn {
+#connected .injury-btn {
     background-color: $accent;
     border: none;
     color: white;
@@ -56,16 +97,16 @@
     border-radius: 8px;
 }
 
-.injury-btn:hover {
+#connected .injury-btn:hover {
     background: $lightaccent;
     color: $icon;
 }
 
-.fa-exclamation-circle {
+#connected .fa-exclamation-circle {
     color: $alert;
 }
 
-.warning p {
+#connected .warning p {
     font-weight: 300;
     font-size: 0.8em;
     margin: 1em 0em 0em;
@@ -74,20 +115,28 @@
 
 #info .nested {
     display: grid;
-    border: 2px dashed gray;
+    border: 3px dotted $divider;
     border-radius: 8px;
     padding: 1em;
+}
+
+#info .container div {
+    max-width: 540px;
 }
 
 #info h1 {
     margin: 0em;
 }
 
-.action {
+#info p {
+    line-height: 1.5em;
+}
+
+#info .moreinfo {
     justify-self: end;
 }
 
-#info .btn-outline {
+#info .moreinfo button {
     border: 1px solid $secondarytext;
     background: transparent;
     color: $secondarytext;
@@ -97,12 +146,12 @@
     text-transform: lowercase;
 }
 
-#info .btn-outline:hover {
+#info .moreinfo button:hover {
     background-color: $secondarytext;
     color: $icon;
 }
 
-.fa-chevron-circle-right {
+#info .fa-chevron-circle-right {
     font-size: 0.8em;
 }
 

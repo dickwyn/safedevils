@@ -64,8 +64,8 @@ $(function(){
 
     if(state.get('authorization_code')) {
       state.set('status', 'connected')
-      let btn = $('a.safetrek-btn > img')
-      let discBtnImg = $('a.safetrek-btn > img').attr('data-disc-src')
+      let btn = $('button.safetrek-btn > img')
+      let discBtnImg = $('button.safetrek-btn > img').attr('data-disc-src')
       log('SafeTrek is connected! Current State:', state)
       M.toast('SafeTrek is connected !', 2000)
       btn.attr('src', discBtnImg)
@@ -73,9 +73,10 @@ $(function(){
       $('input#access_token').val(state.get('access_token'))
       $('span.access_token').text(state.get('access_token').substr(0,15) + '...')
       $('input#refresh_token').val(state.get('refresh_token'))
+      document.getElementById('disconnected').style.display = 'none';
+      document.getElementById('connected').style.display = 'inline';
     } else {
       logWarn('SafeTrek is not connected! Current State:\n', state)
-      M.toast('SafeTrek is not connected !', 2000)
     }
 
     // Prevent changing code and token field values
@@ -84,7 +85,7 @@ $(function(){
     })
 
     // Disconnect from SafeTrek. Clear all data and reload page.
-    $('a.safetrek-btn').on('click', function(e){
+    $('button.safetrek-btn').on('click', function(e){
       e.preventDefault()
       let that = $(this)
       if(state.get('status') !== 'disconnected') {
@@ -103,6 +104,8 @@ $(function(){
           url += that.attr('data-redirect')
         }
         location.href = url
+        document.getElementById('disconnected').style.display = 'inline';
+        document.getElementById('connected').style.display = 'none';
       }
     })
 
@@ -234,3 +237,9 @@ $(function(){
 
   }
 })
+
+$(document).ready(function() {
+  $("#btnSubmit").click(function(){
+      alert("button");
+  }); 
+});
