@@ -9,7 +9,6 @@ html(lang='en')
     title testorange safe
     link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Roboto:100,400,500,700', rel='stylesheet')
-    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin='anonymous')
     link(rel='stylesheet' type='text/css' media='screen' href='/styles/main.css')
     script(src='/scripts/main.js')
   body
@@ -45,14 +44,16 @@ html(lang='en')
         div
           h1 Safety Alert
         .nested
-          div.safety-alert
+          .safety-alert
             button.alert-btn
-              i.fas.fa-exclamation
-          div.safety-alert
+              p 😨
+            p unsafe
+          .safety-alert
             button.injury-btn
-              i.fas.fa-briefcase-medical
+              p 🤕
+            p injured
           .warning
-            i.fas.fa-exclamation Buttons above will alert local emergency services.
+            p ⚠️The buttons above will alert local emergency services.
           .disconnect-btn
             button.safetrek-btn(
               href='#'
@@ -70,7 +71,7 @@ html(lang='en')
         div
           .nested(onload="loadInfo()")
             div
-              h1 Safety Tip
+              h1 Here is a safety tip 📌
             div#tip
             div#moreinfo
     footer

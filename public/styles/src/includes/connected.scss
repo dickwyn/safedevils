@@ -17,14 +17,10 @@
     border: 3px dotted $alert;
     text-align: center;
     text-decoration: none;
-    margin: 1em 1em;
+    margin: 1em 1em 0.5em;
     height: 120px;
     width: 120px;
     border-radius: 50%;
-}
-
-#connected .safety-alert .fas.fa-exclamation {
-    color: $alert;
 }
 
 #connected .alert-btn:hover {
@@ -42,7 +38,7 @@
     border: 3px dotted $accent;
     text-align: center;
     text-decoration: none;
-    margin: 1em 1em;
+    margin: 1em 1em 0.5em;
     height: 120px;
     width: 120px;
     border-radius: 50%;
@@ -53,16 +49,25 @@
     color: $icon;
 }
 
+#connected .alert-btn p,
+#connected .injury-btn p, {
+    font-size: 5em;
+    margin: 0em;
+}
+
+#connected .safety-alert p {
+    margin: 0em;
+    text-align: center;
+}
+
 #connected .warning {
     grid-column: span 2;
     margin: 1em 0em;
 }
 
-#connected .warning i {
-    font-weight: 300;
+#connected .warning p {
     font-size: 0.8em;
-    margin: 1em 0em 0em;
-    color: $text;
+    font-weight: 100;
 }
 
 #connected .disconnect-btn {

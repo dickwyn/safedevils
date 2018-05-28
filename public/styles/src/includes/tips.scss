@@ -21,7 +21,7 @@
     justify-self: end;
 }
 
-#info #moreinfo button {
+#info #moreinfo .button {
     border: 1px solid $secondarytext;
     background: transparent;
     color: $secondarytext;
@@ -29,9 +29,10 @@
     font-size: 16px;
     border-radius: 8px;
     text-transform: lowercase;
+    text-decoration: none;
 }
 
-#info #moreinfo button:hover {
+#info #moreinfo .button:hover {
     background-color: $secondarytext;
     color: $icon;
 }

@@ -241,23 +241,33 @@ $(document).ready(function() {
   $(function loadInfo(){
       var tips = [
         {
-          title: "LiveSafe App",
-          text: "Advisory messages are not life-threatening and may include campus incidents such as a power outage or a water leak. Using active geofence location, advisories target specific areas where an incident is occurring. To receive these advisories, please be sure to enable location-services on your smartphone. ASU Alerts, life-threatening situations such as a major fire or an armed suspect on campus, are sent via these methods",
-          img:  "test"
+          title: "📱 LiveSafe App",
+          text: "Advisory messages are not life-threatening and may include campus incidents such as a power outage or a water leak. Using active geofence location, advisories target specific areas where an incident is occurring. To receive these advisories, please be sure to enable location-services on your smartphone. ASU Alerts, life-threatening situations such as a major fire or an armed suspect on campus, are sent via these methods.",
+          img: "https://cfo.asu.edu/livesafe-mobile-app"
         },
         {
-          title: "Bike Security",
-          text: "Register your bike with the ASU Police. It is important to register your bike with us even if your bicycle is registered with another program or law enforcement agency. Always lock your bike to a bicycle rack. Secure the U-lock through the bike frame, the rear wheel and the bicycle rack. Click to watch this video.",
-          link:  "hello"
+          title: "🚲 Bike Security",
+          text: "Register your bike with the ASU Police. It is important to register your bike with us even if your bicycle is registered with another program or law enforcement agency. Always lock your bike to a bicycle rack. Secure the U-lock through the bike frame,the rear wheel and the bicycle rack.",
+          link: "https://cfo.asu.edu/bike-safety"
         },
         {
-          title: "Safety Escort",
-          text: "Request a one-time or routine pick-up by ASU Tempe Campus' Safety Escort Services. You will receive an email to confirm your reservation.",
-          link:  "https://www.asuusg.com/#!services/g0vkh"
+          title: "🚘 Safety Escort",
+          text: "The Undergraduate Student Government provides a complimentary student escort service on all 4 campuses. Request a one-time or routine pick-up through the LiveSafe app or through the web form.",
+          link: "https://www.asuusg.com/#!services/g0vkh"
+        },
+        {
+          title: "🛡️ Self Defense Courses",
+          text: "The Arizona State University Police Department provides free Rape Aggression Defense Systems self-defense courses for any ASU community member. R.A.D. Basic and R.A.D. for Men are 9-to-12 hours of self-defense training. R.A.D. Advanced is an eight-hour session that may be taken after completing R.A.D. Basic.",
+          link: "https://cfo.asu.edu/rad"
+        },
+        {
+          title: "🛡️ Sexual Violence Prevention",
+          text: "It might surprise you to know that about 9 out of 10 sexual assaults are committed by someone the victim knows, not a stranger. Take Action to Stop Sexual Violence – we can all step up to challenge community norms and create change.",
+          link: "https://wellness.asu.edu/explore-wellness/community-support/violence-prevention/sexual-violence"
         }
       ];
       var tip = tips[Math.floor(Math.random() * tips.length)];
       document.getElementById("tip").innerHTML = '<p><b>' + tip.title + '</b> - ' + tip.text + '<p>';
-      document.getElementById("moreinfo").innerHTML = '<button href="' + tip.link + '"> Learn More <i class="fas fa-chevron-circle-right"></button>';
+      document.getElementById("moreinfo").innerHTML = '<a class="button" target="_blank" href="' + tip.link + '"> Learn More 👉</a>';
   }); 
 });
