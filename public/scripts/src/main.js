@@ -130,7 +130,7 @@ $(function(){
       })
     })
 
-    $('button.use-coords.make-alarm-request').on('click', function(e) {
+    $('.make-alarm-request').on('click', function(e) {
       e.preventDefault()
       if (state.get('status') === 'active-alarm') {
         log('Alarm is currently active and will reset in 10s or less.')
