@@ -137,8 +137,6 @@ $(function(){
         M.toast('Alarm is currently active and will reset in 10s or less.', 1500)
       } else if(state.get('status') !== 'processing') {
         if(state.get('access_token')) {
-          $('.alarm').removeClass('alarm-red')
-          $('.alarm-status').text('Requesting...')
           state.set('status', 'processing')
           let url = SAFETREK_API_URL + '/alarms'
           let data = $('code.alarm-request').text()
