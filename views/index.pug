@@ -45,11 +45,11 @@ html(lang='en')
           h1 Safety Alert
         .nested
           .safety-alert
-            button.alert-btn.use-addr.make-alarm-request
+            button.alert-btn.safety.make-alarm-request
               p 😨
             p unsafe
           .safety-alert
-            button.injury-btn
+            button.injury-btn.injury.make-alarm-request
               p 🤕
             p injured
           .warning
@@ -66,6 +66,19 @@ html(lang='en')
             )
               b Disconnect 
               | SafeTrek
+            code.alarm-request.
+              {
+                "services": {
+                  "police": true,
+                  "fire": false,
+                  "medical": false
+                },
+                "location.coordinates": {
+                  "lat": 34.32334,
+                  "lng": -117.3343,
+                  "accuracy": 5
+                }
+              }
     section#info
       .container
         div

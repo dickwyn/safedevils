@@ -64,14 +64,7 @@ $(function(){
 
     if(state.get('authorization_code')) {
       state.set('status', 'connected')
-      let btn = $('button.safetrek-btn > img')
-      let discBtnImg = $('button.safetrek-btn > img').attr('data-disc-src')
       log('SafeTrek is connected! Current State:', state)
-      btn.attr('src', discBtnImg)
-      $('input#authorization_code').val(state.get('authorization_code'))
-      $('input#access_token').val(state.get('access_token'))
-      $('span.access_token').text(state.get('access_token').substr(0,15) + '...')
-      $('input#refresh_token').val(state.get('refresh_token'))
       document.getElementById('disconnected').style.display = 'none';
       document.getElementById('connected').style.display = 'inline';
     } else {
@@ -125,7 +118,6 @@ $(function(){
         complete: () => { 
           that.prop('disabled', false)
           $('input#access_token').prop('disabled', false)
-          M.toast('Access token refreshed !', 2000)
         }
       })
     })
@@ -134,7 +126,6 @@ $(function(){
       e.preventDefault()
       if (state.get('status') === 'active-alarm') {
         log('Alarm is currently active and will reset in 10s or less.')
-        M.toast('Alarm is currently active and will reset in 10s or less.', 1500)
       } else if(state.get('status') !== 'processing') {
         if(state.get('access_token')) {
           state.set('status', 'processing')
@@ -174,7 +165,7 @@ $(function(){
       }
     })
 
-    $('.use-addr').on('click', function(e) {
+    $('.safety').on('click', function(e) {
       e.preventDefault()
       let that = $(this)
       $.getJSON(RANDOM_ADDRESS_DATA, (data) => {
@@ -183,8 +174,8 @@ $(function(){
         let responseJSON = {
           "services": {
             "police": true,
-            "fire": false,
-            "medical": false
+            "fire": true,
+            "medical": true
           },
           "location.address": {
             "line1": randomAddress.address1,
@@ -195,14 +186,10 @@ $(function(){
           }
         }
         $('code.alarm-request').text(JSON.stringify(responseJSON, null, 2))
-        that.addClass('hide')
-        $('.use-coords').removeClass('hide')
-        log('Using random location address.')
-        M.toast('Using random location address.', 1500)
       })
     })
 
-    $('.use-coords').on('click', function(e) {
+    $('.injury').on('click', function(e) {
       e.preventDefault()
       let that = $(this)
       $.getJSON(RANDOM_ADDRESS_DATA, (data) => {
@@ -210,9 +197,9 @@ $(function(){
         const randomAddress = addresses[Math.floor(Math.random() * addresses.length)]
         let responseJSON = {
           "services": {
-            "police": true,
+            "police": false,
             "fire": false,
-            "medical": false
+            "medical": true
           },
           "location.coordinates": {
             "lat": randomAddress.coordinates.lat,
@@ -221,10 +208,6 @@ $(function(){
           }
         }
         $('code.alarm-request').text(JSON.stringify(responseJSON, null, 2))
-        that.addClass('hide')
-        $('.use-addr').removeClass('hide')
-        log('Using random location coordinates.')
-        M.toast('Using random location coordinates.', 1500)
       })
     })
 
