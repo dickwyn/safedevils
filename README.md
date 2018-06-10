@@ -44,3 +44,7 @@ This project is built with:
     ├── index.js            # main entry point
     ├── package-lock.json
     └── package.json        # Document node dependencies
+
+## License
+
+The contents of this repository are covered under the [MIT License](https://github.com/dickwyn/testorange-safe/blob/master/LICENSE).
