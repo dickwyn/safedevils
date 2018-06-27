@@ -14,14 +14,17 @@ import nodemon from 'gulp-nodemon'
 
 let bs = browserSync.create()
 
-let errorHandler = function(msgSource) {
-  return function({message, plugin = msgSource}){
-    console.error( `\n${plugin}: ${message}\n`)
+let errorHandler = function (msgSource) {
+  return function ({
+    message,
+    plugin = msgSource
+  }) {
+    console.error(`\n${plugin}: ${message}\n`)
     this.emit('end')
   }
 }
 
-gulp.task('makeStyle',() => {
+gulp.task('makeStyle', () => {
   return gulp.src('public/styles/src/main.scss')
     .pipe(plumber(errorHandler('makeStyle')))
     .pipe(sourcemaps.init())
@@ -37,14 +40,16 @@ gulp.task('makeStyle',() => {
     .pipe(bs.stream())
 })
 
-gulp.task('makeScript',() => {
+gulp.task('makeScript', () => {
   const ENTRY_SCRIPTS = [
     'public/scripts/src/main.js'
   ]
   return merge(ENTRY_SCRIPTS.map((entry) => {
     let filePath = entry.split('.').shift()
     let fileName = filePath.split('/').pop()
-    return browserify(entry,{ debug: true })
+    return browserify(entry, {
+        debug: true
+      })
       .transform('babelify')
       .bundle()
       .on('error', errorHandler('browserify'))
@@ -57,7 +62,7 @@ gulp.task('makeScript',() => {
   }))
 })
 
-gulp.task('scriptWatch',['makeScript'], function(done) {
+gulp.task('scriptWatch', ['makeScript'], function (done) {
   bs.reload()
   done()
 })
@@ -78,8 +83,8 @@ gulp.task('startServer', function (cb) {
   })
 })
 
-gulp.task('watch', ['makeStyle','makeScript','startServer'], () => {
-    
+gulp.task('watch', ['makeStyle', 'makeScript', 'startServer'], () => {
+
   bs.init({
     proxy: 'localhost:5000',
     port: 3000,
@@ -88,7 +93,9 @@ gulp.task('watch', ['makeStyle','makeScript','startServer'], () => {
 
   gulp.watch(['public/styles/src/**/**/**'], ['makeStyle'])
   gulp.watch(['public/scripts/src/**/**/**'], ['scriptWatch'])
-  gulp.watch(['views/*.pug'], () => { bs.reload() })
+  gulp.watch(['views/*.pug'], () => {
+    bs.reload()
+  })
 })
 
-gulp.task('default', ['makeStyle','makeScript'])
+gulp.task('default', ['makeStyle', 'makeScript'])

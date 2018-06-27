@@ -23,9 +23,6 @@ This project is built with:
 1. `$ npm start`
 2. Browsersync can be accessed through `localhost:3000`
 
-**Production Mode**
-1. `$ gulp deploy
-
 ## Folder Structure
 
     .  
