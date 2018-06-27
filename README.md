@@ -1,6 +1,6 @@
 ## testorange safe
 
-testorange-safe application. Built with the SafeTrek API
+testorange-safe application. Built with the Noonlight (formerly SafeTrek) API
 
 ## Project Dependencies
 
@@ -20,8 +20,8 @@ This project is built with:
 
 **Development Mode**
 
-1. `$ gulp`
-2. Browsersync can be accessed through `localhost:5000`
+1. `$ npm start`
+2. Browsersync can be accessed through `localhost:3000`
 
 **Production Mode**
 1. `$ gulp deploy

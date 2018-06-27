@@ -144,7 +144,6 @@ $(function(){
             success: (data) => {
               log('Alarm created successfully! Server response:\n', JSON.stringify(data, null, 2), '\nAlarm status will reset in 10s.')
               $('.alarm').addClass('alarm-red')
-              M.toast('Alarm Created! Will reset in 10s.<br>Check console for JSON response.', 2000)
             },
             error: (xhr, status, err) => { logErr('Error:', err) },
             complete: () => {
@@ -154,7 +153,7 @@ $(function(){
                 state.set('status', 'connected')
                 $('.alarm').removeClass('alarm-red')
                 log('Alarm status reset!')
-                M.toast('Alarm Reset !', 2000)
+                $('.status-message').html('')
               }, 10000)
             }
           })
@@ -167,7 +166,6 @@ $(function(){
 
     $('.safety').on('click', function(e) {
       e.preventDefault()
-      let that = $(this)
       $.getJSON(RANDOM_ADDRESS_DATA, (data) => {
         const addresses = data.addresses
         const randomAddress = addresses[Math.floor(Math.random() * addresses.length)]
@@ -185,13 +183,13 @@ $(function(){
             "zip": randomAddress.postalCode
           }
         }
+        $('.status-message').html('<p>Your safety request has been processed.</p>')
         $('code.alarm-request').text(JSON.stringify(responseJSON, null, 2))
       })
     })
 
     $('.injury').on('click', function(e) {
       e.preventDefault()
-      let that = $(this)
       $.getJSON(RANDOM_ADDRESS_DATA, (data) => {
         const addresses = data.addresses
         const randomAddress = addresses[Math.floor(Math.random() * addresses.length)]
@@ -201,12 +199,15 @@ $(function(){
             "fire": false,
             "medical": true
           },
-          "location.coordinates": {
-            "lat": randomAddress.coordinates.lat,
-            "lng": randomAddress.coordinates.lng,
-            "accuracy": DEFAULT_ACCURACY
+          "location.address": {
+            "line1": randomAddress.address1,
+            "line2": randomAddress.address2,
+            "city": randomAddress.city,
+            "state": randomAddress.state,
+            "zip": randomAddress.postalCode
           }
         }
+        $('.status-message').html('<p>Your injury request has been processed.</p>')
         $('code.alarm-request').text(JSON.stringify(responseJSON, null, 2))
       })
     })

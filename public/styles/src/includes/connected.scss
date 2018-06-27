@@ -60,9 +60,18 @@
     text-align: center;
 }
 
+#connected .status-message {
+    grid-column: span 2;
+    margin: 1.5em 0em 0em;
+}
+
+#connected .status-message p {
+    font-size: 1em;
+}
+
 #connected .warning {
     grid-column: span 2;
-    margin: 1em 0em;
+    margin: 0em 0em 1em;
 }
 
 #connected .warning p {
